@@ -1,14 +1,9 @@
-import { click } from "@testing-library/user-event/dist/click"
 import PropTypes from "prop-types"
 
-const Button = ({color, text}) => {
-    const clicked = () => {
-        console.log("Hello")
-    }
-
+const Button = ({color, text, onClick}) => {
    return (
         <div>
-            <button className="btn" style={{backgroundColor: color}} onClick={clicked}>{text}</button>
+            <button className="btn" style={{backgroundColor: color}} onClick={onClick}>{text}</button>
         </div>
     )
 }
@@ -20,6 +15,8 @@ Button.defaultProps = {
 Button.propTypes = {
     text: PropTypes.string,
     color: PropTypes.string,
+    onClick: PropTypes.func,
+
 }
 
 
