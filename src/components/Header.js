@@ -1,15 +1,24 @@
 //components should always have uppercase letter in the file
+import PropTypes from "prop-types"
 
-import React from "react"
-
-const Header = () => {
+const Header = ({title}) => {
     return (
-        <header>
-            <h1>Task tracker</h1>
+        <header className="header">
+            <h1>{title}</h1>
+            <button className="btn">Add</button>
 
         </header>
     )
 }
+
+Header.defaultProps = {
+    title: "Task Tracker",
+}
+
+Header.propTypes = {
+    title: PropTypes.string.isRequired,
+}
+
 
 export default Header
 
