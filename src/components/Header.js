@@ -1,6 +1,7 @@
 //components should always have uppercase letter in the file
 import PropTypes from "prop-types"
 import Button from "./Button"
+import Tasks from "./Tasks"
 
 const Header = ({ title }) => {
     const onClick = () => {
