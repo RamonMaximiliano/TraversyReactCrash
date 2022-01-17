@@ -1,3 +1,5 @@
+import Task from "./Tasks" 
+
 const Tasks = ({tasks}) => {
 
 
@@ -5,7 +7,7 @@ const Tasks = ({tasks}) => {
         <>
             {tasks.map((task) => (
 
-                <h3 key={task.id}>{task.text}</h3>
+                <Task key={task.id} task={task}/>
 
             ))}
         </>
