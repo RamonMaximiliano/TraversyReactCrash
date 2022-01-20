@@ -5,7 +5,6 @@ const AddTask = ({onAdd}) => {
     const [day, setDay] = useState ("")
     const [reminder, setReminder] = useState (false)
 
-
     const onSubmit = (e) => {
         e.preventDefault()
 
@@ -21,23 +20,21 @@ const AddTask = ({onAdd}) => {
         setReminder(false)
     }
 
-
-
     return (
         <form className="add-form" onSubmit={onSubmit}>
             <div className="form-control">
                 <label>Task</label>
-                <input type="text" placeholder="Add Task" value={text} onChange={(e) => setText(e.target.value)}/>
+                <input type="text" placeholder="Add Task" onChange={(e) => setText(e.target.value)}  value={text}/>
             </div>
             <div className="form-control">
-                <label>Day & Time</label>
-                <input type="text" placeholder="Add Day & Time" value={day} onChange={(e) => setDay(e.target.value)}/>
+                <label>Day Time</label>
+                <input type="text" placeholder="Add Day Time"  onChange={(e) => setDay(e.target.value)} value={day}/>
             </div>
             <div className="form-control form-control-check">
                 <label>Set Reminder</label>
-                <input type="checkbox" checked={reminder} value={reminder} onChange={(e) => setReminder(e.currentTarget.checked)}/>
+                <input type="checkbox" checked={reminder} onChange={(e) => setReminder(e.currentTarget.checked)} value={reminder} />
             </div>
-            <input type="subnmit" value="Save Task" className="btn btn-block"/>
+            <input type="submit" value="Save Task" className="btn btn-block"/>
         </form>
     )
 }
